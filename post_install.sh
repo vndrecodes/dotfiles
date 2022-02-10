@@ -34,3 +34,11 @@ upgrade_nano() {
     echo ".zshenv not found!"
     echo "Add: $ALIAS_NANO manually."
 }
+
+
+main() {
+  install_xcode
+  upgrade_nano
+}
+
+main
