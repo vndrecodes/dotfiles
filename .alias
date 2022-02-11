@@ -22,9 +22,6 @@ alias myip='curl --location https://checkip.amazonaws.com'
 # similar to "apropos *"
 alias comgenc='compgen -c'
 
-# readlink -f polyfill
-alias rl='echo "$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")"'
-
 alias sshut='shutdown -h now'
 alias slock='open -a ScreenSaverEngine.app'
 alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'

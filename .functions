@@ -27,3 +27,8 @@ ffind() {
 fffind() {
   ffind $1 "*$2*"
 }
+
+# readlink -f polyfill
+rl() {
+  echo "$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")"
+}
