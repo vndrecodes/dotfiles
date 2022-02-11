@@ -1,0 +1,30 @@
+alias lll='ls -lhGF'
+alias ll='ls -lhaGF'
+
+alias cdd='cd ~/nextlcoud/documents'
+alias cdg='cd ~/github/'
+alias cdh='cd ~'
+alias cdn='cd ~/nextcloud/'
+alias cdp='cd ~/nextcloud/projects'
+
+alias dirs='dirs -v'
+alias grep='grep --color'
+
+alias bat='pmset -g batt'
+alias sn='pmset displaysleepnow'
+alias lsblk='diskutil list'
+
+alias firefox='open -a Firefox'
+alias nano='/usr/local/bin/nano'
+
+alias myip='curl --location https://checkip.amazonaws.com'
+
+# similar to "apropos *"
+alias comgenc='compgen -c'
+
+# readlink -f polyfill
+alias rl='echo "$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")"'
+
+alias sshut='shutdown -h now'
+alias slock='open -a ScreenSaverEngine.app'
+alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
