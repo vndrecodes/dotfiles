@@ -17,3 +17,13 @@ mkcd() {
 cdf() {
   cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
 }
+
+# case-insensitive find, surpress errors (mostly file perms)
+ffind() {
+  find $1 -iname $2 2>/dev/null
+}
+
+# "fuzzy" find
+fffind() {
+  ffind $1 "*$2*"
+}
