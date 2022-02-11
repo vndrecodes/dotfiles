@@ -1,7 +1,19 @@
+#!/bin/bash
+
 # make filename lowercase and remove spaces
 norm_fn() {
   NAME_ORIG=$1
   TO_LOWER=$(echo "$NAME_ORIG" | tr '[:upper:]' '[:lower:]')
   NO_SPACE=$(echo $TO_LOWER | sed 's/ /_/g')
   mv -vi $NAME_ORIG $NO_SPACE
+}
+
+# make and change directory
+mkcd() {
+  mkdir -p "$@" && cd "$_";
+}
+
+# change directory to the location of in finder window
+cdf() {
+  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
 }
