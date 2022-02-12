@@ -13,7 +13,7 @@ mkcd() {
   mkdir -p "$@" && cd "$_";
 }
 
-# change directory to the location of in finder window
+# change directory to the location in finder window
 cdf() {
   cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
 }
@@ -31,4 +31,22 @@ fffind() {
 # readlink -f polyfill
 rl() {
   echo "$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")"
+}
+
+# readlink and copy path to clipboard
+rlp() {
+  rl $1 | pbcopy
+}
+
+#
+
+fwhatis() {
+  cat << EOF
+mkcd      - Make and change directory
+cdf       - Change working directory to the location in the finder window
+ffind     - Case-insensitive find and surpress errors
+fffind    - Fuzzy find
+rl        - Readlink
+rlp       - Readlink and copy path to clipboard
+EOF
 }

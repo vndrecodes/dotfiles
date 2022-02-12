@@ -9,6 +9,7 @@ alias cdp='cd ~/nextcloud/projects'
 
 alias dirs='dirs -v'
 alias grep='grep --color'
+alias ppp='pbpaste'
 
 alias bat='pmset -g batt'
 alias sn='pmset displaysleepnow'
