@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Enable special characters picker on long button press
+defaults write -g ApplePressAndHoldEnabled -bool true
