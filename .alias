@@ -1,7 +1,7 @@
 alias lll='ls -lhGF'
 alias ll='ls -lhaGF'
 
-alias cdd='cd ~/nextlcoud/documents'
+alias cdd='cd ~/nextcloud/documents'
 alias cdg='cd ~/github/'
 alias cdh='cd ~'
 alias cdn='cd ~/nextcloud/'
