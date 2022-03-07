@@ -14,7 +14,7 @@ mkcd() {
 }
 
 # change directory to the location in finder window
-cdf() {
+cdfi() {
   cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
 }
 
