@@ -1,0 +1,10 @@
+atom-beautify@0.33.4
+atom-ternjs@0.20.0
+duotone-dark-amethyst-syntax@2.0.4
+duotone-dark-sea-syntax@2.1.0
+duotone-dark-sky-syntax@2.1.0
+duotone-dark-syntax@2.1.0
+file-icons@2.1.47
+hyperclick@0.1.5
+moonlight@0.11.0
+pretty-json@2.1.2
