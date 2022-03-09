@@ -12,7 +12,11 @@ depends_on() {
 
 # install c-compiler & git
 install_xcode() {
-  xcode-select --install
+  xcode-select -v > /dev/null 2>&1
+
+  if [ $? -ne 0 ]; then
+    xcode-select --install
+  fi
 }
 
 
@@ -33,6 +37,7 @@ upgrade_nano() {
   else
     echo ".zshenv not found!"
     echo "Add: $ALIAS_NANO manually."
+  fi
 }
 
 
