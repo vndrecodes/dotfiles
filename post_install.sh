@@ -9,6 +9,15 @@ depends_on() {
   fi
 }
 
+create_symlinks() {
+  cd ~
+  if [[ ! -d github || ! -d nextcloud ]]; then; echo "Missing directories (github,nextcloud)"; fi
+
+  ln -s github/dotfiles/zsh/.functions .functions
+  ln -s github/dotfiles/nano/.nanorc .nanorc
+  ln -s github/dotfiles/zsh/.alias .zshenv
+  ln -s github/dotfiles/zsh/.zshrc .zshrc
+}
 
 # install c-compiler & git
 install_xcode() {
@@ -44,6 +53,7 @@ upgrade_nano() {
 main() {
   install_xcode
   upgrade_nano
+  create_symlinks
 }
 
 main
