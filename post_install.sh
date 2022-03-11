@@ -9,6 +9,7 @@ depends_on() {
   fi
 }
 
+
 confirm() {
   msg=$1
   echo $msg
@@ -19,12 +20,24 @@ confirm() {
   fi
 }
 
+
 check_essential_dirs() {
   cd ~
   if [[ ! -d github || ! -d nextcloud ]]; then
      echo "Missing directories (github,nextcloud)"
      exit 1
   fi
+}
+
+
+create_symlinks() {
+  cd ~
+  if [[ ! -d github || ! -d nextcloud ]]; then; echo "Missing directories (github,nextcloud)"; fi
+
+  ln -s github/dotfiles/zsh/.functions .functions
+  ln -s github/dotfiles/nano/.nanorc .nanorc
+  ln -s github/dotfiles/zsh/.alias .zshenv
+  ln -s github/dotfiles/zsh/.zshrc .zshrc
 }
 
 
