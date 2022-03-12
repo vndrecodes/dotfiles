@@ -86,6 +86,11 @@ link_configs() {
 }
 
 
+add_bash_completions() {
+  # ~.zsh/completion
+}
+
+
 config_atom() {
   # using rsync for moving stuff to get a little bit feedback
   cd ~/Downloads
