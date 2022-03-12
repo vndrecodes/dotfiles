@@ -131,6 +131,13 @@ upgrade_nano() {
   fi
 }
 
+install_brew() {
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  brew analytics off
+  brew install htop
+  brew install baobab
+}
+
 
 main() {
   check_essential_dirs
@@ -141,6 +148,7 @@ main() {
   # link_configs
   # config_atom
   # upgrade_nano
+  # install_brew
 }
 
 main
