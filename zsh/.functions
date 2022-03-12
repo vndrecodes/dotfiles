@@ -43,6 +43,20 @@ revdns() {
   dig -x $1
 }
 
+# List which hosts in lan are up
+wholan() {
+  local sedex='/incomplete|\(192.168.0.(1|255)\)|\(224.0.0.251\)|\(239.255.255.250\)/d'
+  ping -c 4 192.168.0.255 > /dev/null
+  MACS=$(arp -a | sed -E $sedex | awk '{print $2,$4}')
+
+  while read -r iline; do
+    vendor=$(curl --silent "https://api.macvendors.com/$(echo $iline | awk '{print $2}')")
+    vendor=$(echo $vendor | sed 's/{.*}//')
+    echo "$iline $vendor"
+    sleep 1
+  done <<< "$MACS"
+}
+
 fwhatis() {
   cat << EOF
 revdns    - Reverse dns lookup
@@ -53,6 +67,7 @@ ffind     - Case-insensitive find and surpress errors
 fffind    - Fuzzy find
 rl        - Readlink
 rlp       - Readlink and copy path to clipboard
+wholan    - List hosts in lan
 
 EOF
 }
