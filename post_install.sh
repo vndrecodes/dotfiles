@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/zsh
+
+set -e
 
 depends_on() {
   $1 -v > /dev/null
@@ -50,7 +52,9 @@ install_xcode() {
 
 
 copy_ssh_keys() {
-  echo "TODO copy, copy, copy..."
+  if [ ! -d ~/.ssh ]; then
+    echo "TODO copy, copy, copy..."
+  fi
 }
 
 
@@ -93,18 +97,22 @@ add_bash_completions() {
 
 config_atom() {
   # using rsync for moving stuff to get a little bit feedback
-  cd ~/Downloads
-  mkdir atom && cd ~/atom
+  atom -v >/dev/null
+  if [ $? -ne 0 ]; then
+    cd ~/Downloads
+    mkdir atom && cd ~/atom
 
-  curl --location --remote-name https://atom.io/download/mac
-  unzip atom-mac.zip
-  # mv Atom.app
-  rsync -vru --progress ./Atom.app /Applications/.
-  open -a Atom
-  echo "Open Atom and run: Install Shell Commands"
-  confirm "Done? (y for yes, anything else for abort)"
-  rsnyc -vru --progress ~/github/dotfiles/atom/config.cson ~/.atom/.
-  rsnyc -vru --progress ~/github/dotfiles/atom/keymap.cson ~/.atom/.
+    curl --location --remote-name https://atom.io/download/mac
+    unzip atom-mac.zip
+    rsync -vru --progress ./Atom.app /Applications/.
+    open -a Atom
+    echo "Open Atom and run: Install Shell Commands"
+    confirm "Done? (y for yes, anything else for abort)"
+  fi
+
+  killall Atom
+  rsync -vr --progress ~/github/dotfiles/atom/config.cson ~/.atom/.
+  rsync -vr --progress ~/github/dotfiles/atom/keymap.cson ~/.atom/.
 
   apm install --packages-file ~/github/dotfiles/atom/my-packages.txt
 }
@@ -140,13 +148,13 @@ install_brew() {
 
 
 main() {
-  check_essential_dirs
-  install_xcode
+  # check_essential_dirs
+  # install_xcode
   copy_ssh_keys
-  clone_dotfiles
+  # clone_dotfiles
   # install_node
   # link_configs
-  # config_atom
+  config_atom
   # upgrade_nano
   # install_brew
 }
