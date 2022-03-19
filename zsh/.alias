@@ -7,6 +7,9 @@ alias cdh='cd ~'
 alias cdn='cd ~/nextcloud/'
 alias cdp='cd ~/nextcloud/projects'
 
+alias mvi='mv -i'
+alias cpi='cp -i'
+
 alias dirs='dirs -v'
 alias grep='grep --color'
 alias ppp='pbpaste'
@@ -14,11 +17,13 @@ alias ppp='pbpaste'
 alias bat='pmset -g batt'
 alias sn='pmset displaysleepnow'
 alias lsblk='diskutil list'
+alias df='df -H'
 
 alias firefox='open -a Firefox'
 alias nano='/usr/local/bin/nano'
 
 alias myip='curl --location https://checkip.amazonaws.com'
+alias oppo='lsof -i -P'
 
 # similar to "apropos *"
 alias comgenc='compgen -c'

@@ -5,7 +5,12 @@ fn() {
   NAME_ORIG=$1
   TO_LOWER=$(echo "$NAME_ORIG" | tr '[:upper:]' '[:lower:]')
   NO_SPACE=$(echo $TO_LOWER | sed 's/ /_/g')
-  mv -vi $NAME_ORIG $NO_SPACE
+  echo $NO_SPACE
+}
+
+# make filename lowercase and remove spaces and rename file
+fnmov() {
+  mv -vi $1 $(fn $1)
 }
 
 # make and change directory
@@ -61,6 +66,7 @@ fwhatis() {
   cat << EOF
 revdns    - Reverse dns lookup
 fn        - Lowercase file and remove spaces
+fnmov     - Lowercase file, remove spaces and rename file
 mkcd      - Make and change directory
 cdf       - Change working directory to the location in the finder window
 ffind     - Case-insensitive find and surpress errors
