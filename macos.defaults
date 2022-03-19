@@ -1,4 +1,170 @@
 #!/bin/bash
 
+# read current value
+# defaults read com.apple.dock "orientation"
+
+
+## Dock
+# Orientation
+defaults write com.apple.dock "orientation" -string "left"
+
+# Icon size
+defaults write com.apple.dock "tilesize" -int "52"
+
+# Autohide (off)
+defaults write com.apple.dock "autohide" -bool "false"
+
+# Show recents (off)
+defaults write com.apple.dock "show-recents" -bool "false"
+
+# Minimize animation effect ("genie"|"scale"|"suck")
+defaults write com.apple.dock "mineffect" -string "genie"
+
+# Minimize windows into their application’s icon
+defaults write com.apple.dock minimize-to-application -bool true
+
+# Indicate open appliactions
+defaults write com.apple.dock show-process-indicators -bool true
+
+# Dark mode
+defaults write -g AppleInterfaceStyle Dark
+
+## Screenshots
+# Include date
+defaults write com.apple.screencapture "include-date" -bool "true"
+
+# Location
+defaults write com.apple.screencapture "location" -string "~/Desktop"
+
+## Finder
+# Show all file extensions
+defaults write -g "AppleShowAllExtensions" -bool "true"
+
+# Show hidden files
+defaults write com.apple.Finder "AppleShowAllFiles" -bool "true"
+
+# File extension warning (on change off)
+defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
+
+# Do not save to icloud (negate default behavior)
+defaults write -g "NSDocumentSaveNewDocumentsToCloud" -bool "false"
+
+# Sidebar icon size (1|2|3)
+defaults write -g "NSTableViewDefaultSizeMode" -int "1"
+
+# Expand save panel by default
+defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
+defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
+
+# Expand print panel by default
+defaults write -g PMPrintingExpandedStateForPrint -bool true
+defaults write -g PMPrintingExpandedStateForPrint2 -bool true
+
+# Default location for new finder windows
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
+defaults write com.apple.finder NewWindowTargetPath -string "file:///Users/$USER/"
+
+# Show status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Show path bar
+defaults write com.apple.finder ShowPathbar -bool true
+
+# Show full path as window title
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+# Keep folders on top when sorting by name
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
+# Search current folder by default
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+# Avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# List view by default ("icnv"|"clmv"|"Flwv")
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+# Airdrop over ETH
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
+
+# Info panes
+defaults write com.apple.finder FXInfoPanesExpanded -dict \
+  Comments -bool true \
+  MetaData -bool true \
+  Name -bool true \
+  Preview -bool true \
+  Privileges -bool true
+
+
+## Spotlight
+defaults write com.apple.spotlight orderedItems -array \
+  '{"enabled" = 1;"name" = "APPLICATIONS";}' \
+  '{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
+  '{"enabled" = 1;"name" = "DIRECTORIES";}' \
+  '{"enabled" = 1;"name" = "PDF";}' \
+  '{"enabled" = 0;"name" = "FONTS";}' \
+  '{"enabled" = 1;"name" = "DOCUMENTS";}' \
+  '{"enabled" = 0;"name" = "MESSAGES";}' \
+  '{"enabled" = 0;"name" = "CONTACT";}' \
+  '{"enabled" = 0;"name" = "EVENT_TODO";}' \
+  '{"enabled" = 0;"name" = "IMAGES";}' \
+  '{"enabled" = 1;"name" = "BOOKMARKS";}' \
+  '{"enabled" = 0;"name" = "MUSIC";}' \
+  '{"enabled" = 0;"name" = "MOVIES";}' \
+  '{"enabled" = 0;"name" = "PRESENTATIONS";}' \
+  '{"enabled" = 0;"name" = "SPREADSHEETS";}' \
+  '{"enabled" = 0;"name" = "SOURCE";}' \
+  '{"enabled" = 0;"name" = "MENU_DEFINITION";}' \
+  '{"enabled" = 1;"name" = "MENU_OTHER";}' \
+  '{"enabled" = 0;"name" = "MENU_CONVERSION";}' \
+  '{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
+  '{"enabled" = 1;"name" = "MENU_WEBSEARCH";}' \
+  '{"enabled" = 1;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
+
+
+## Others
+# Always show scrollbars
+defaults write -g AppleShowScrollBars -string "Always"
+
+# Disable automatic termination of inactive apps
+defaults write -g NSDisableAutomaticTermination -bool true
+
+# Disable auto-correct
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+
+## DiskUtility
+defaults write com.apple.DiskUtility "OperationProgress DetailsVisible" -bool "true";
+
+# Show all devices enable
+defaults write SidebarShowAllDevices -bool "true";
+
 # Enable special characters picker on long button press
 defaults write -g ApplePressAndHoldEnabled -bool true
+
+# Disable automatic capitalization
+defaults write -g NSAutomaticCapitalizationEnabled -bool false
+
+# Disable smart dashes
+defaults write -g NSAutomaticDashSubstitutionEnabled -bool false
+
+# Disable automatic period substitution
+defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false
+
+# Disable smart quotes
+defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
+
+# Enable tab to click
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+
+# Show language menu bar on boot screen
+sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
+
+
+## Menu bar
+# Remove siri
+defaults write com.apple.Siri StatusMenuVisible -bool false
+
+killall Finder;
+killall Dock;
+killall SystemUIServer;
