@@ -144,6 +144,7 @@ install_brew() {
   brew analytics off
   brew install htop
   brew install baobab
+  brew install shellcheck
 }
 
 build_locatedb() {

@@ -32,6 +32,8 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 # For enabling autocompletion of privileged environments in privileged commands
 zstyle ':completion::complete:*' gain-privileges 1
 
+# Different colors for files, dirs autocompletion
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # Remembering recent directories
 autoload -Uz add-zsh-hook
