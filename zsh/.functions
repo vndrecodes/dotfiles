@@ -35,7 +35,7 @@ fffind() {
 
 # readlink -f polyfill
 rl() {
-  echo "$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")"
+  echo -n "$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")"
 }
 
 # readlink and copy path to clipboard

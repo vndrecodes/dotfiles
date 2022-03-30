@@ -146,6 +146,10 @@ install_brew() {
   brew install baobab
 }
 
+build_locatedb() {
+  sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+}
+
 
 main() {
   # check_essential_dirs
@@ -157,6 +161,7 @@ main() {
   config_atom
   # upgrade_nano
   # install_brew
+  # build_locatedb
 }
 
 main
