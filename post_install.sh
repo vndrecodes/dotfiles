@@ -14,7 +14,7 @@ depends_on() {
 
 confirm() {
   msg=$1
-  echo $msg
+  echo "$msg"
   read user_in
   if [ "$user_in" != "y" ]; then
     echo "Abort"
@@ -34,7 +34,7 @@ check_essential_dirs() {
 
 create_symlinks() {
   cd ~
-  if [[ ! -d github || ! -d nextcloud ]]; then; echo "Missing directories (github,nextcloud)"; fi
+  if [[ ! -d github || ! -d nextcloud ]]; then echo "Missing directories (github,nextcloud)"; fi
 
   ln -s github/dotfiles/zsh/.functions .functions
   ln -s github/dotfiles/nano/.nanorc .nanorc
@@ -91,6 +91,7 @@ link_configs() {
 
 
 add_bash_completions() {
+  echo "fix .zsh/completion"
   # ~.zsh/completion
 }
 
@@ -132,7 +133,7 @@ upgrade_nano() {
   cd ~
   ALIAS_NANO="alias nano=/usr/local/bin/nano"
   if [ -f ".zshenv" ]; then
-    echo $ALIAS_NANO >> .zshenv
+    echo "$ALIAS_NANO" >> .zshenv
   else
     echo ".zshenv not found!"
     echo "Add: $ALIAS_NANO manually."
@@ -151,6 +152,11 @@ build_locatedb() {
   sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 }
 
+htop_rc() {
+  cd ~/.config/htop || exit
+  mv htoprc htoprc.bak
+  ln -s ~/github/dotfiles/htop/htoprc htoprc
+}
 
 main() {
   # check_essential_dirs
@@ -163,6 +169,7 @@ main() {
   # upgrade_nano
   # install_brew
   # build_locatedb
+  # htop_rc
 }
 
 main

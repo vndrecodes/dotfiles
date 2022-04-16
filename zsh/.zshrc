@@ -1,9 +1,15 @@
 # Prompt
 PROMPT='%F{132}%n%f %F{30}at%f %F{53}%m%f %F{30}in%f %F{179}%~%f %# '
 export PATH=~/bin:$PATH
+export EDITOR=nano
+export VISUAL="$EDITOR"
 
 source ~/.functions
 
+# Bash like edit command in editor
+autoload edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
 
 ## Individual autocomplete (files in ~/.zsh/completion)
 fpath=(~/.zsh/completion $fpath)

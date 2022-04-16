@@ -6,6 +6,7 @@ Chromium.app
 Docker.app
 Download Manager SD Card.app
 DuckDuckGo Privacy Essentials.app
+Figma.app
 Firefox Developer Edition.app
 Firefox.app
 GIMP-2.10.app
@@ -13,13 +14,13 @@ GitHub Desktop.app
 Google Chrome.app
 HazeOver.app
 Intel Power Gadget
-Microsoft Remote Desktop.app
 Miro.app
 MongoDB Compass.app
 MySQLWorkbench.app
 Nextcloud.app
 Pages.app
 Postman.app
+ProtonVPN.app
 Raspberry Pi Imager.app
 Rectangle.app
 SQLDeveloper.app
@@ -31,4 +32,5 @@ Thunderbird.app
 Utilities
 VirtualBox.app
 WebStorm.app
+draw.io.app
 texmaker.app

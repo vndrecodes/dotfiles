@@ -4,6 +4,7 @@ alias ll='ls -lhaGF'
 alias cdd='cd ~/nextcloud/documents'
 alias cdg='cd ~/github/'
 alias cdh='cd ~'
+alias cdi="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias cdn='cd ~/nextcloud/'
 alias cdp='cd ~/nextcloud/projects'
 
@@ -26,7 +27,7 @@ alias myip='curl --location https://checkip.amazonaws.com'
 alias oppo='lsof -i -P'
 
 # similar to "apropos *"
-alias comgenc='compgen -c'
+alias compgen='bash -c "compgen -c"'
 
 alias sshut='shutdown -h now'
 alias slock='open -a ScreenSaverEngine.app'
