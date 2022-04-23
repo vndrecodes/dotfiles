@@ -45,7 +45,7 @@ user_pref("privacy.clearOnShutdown.siteSettings", true); // [DEFAULT: false]
 user_pref("browser.download.autohideButton", false);
 user_pref("accessibility.typeaheadfind", true); // enable "Find As You Type"
 user_pref("browser.backspace_action", 0); // 0=previous page, 1=scroll up, 2=do nothing
-user_pref("browser.quitShortcut.disabled", true); // disable Ctrl-Q quit shortcut [LINUX] [MAC] [FF87+]
+user_pref("browser.quitShortcut.disabled", false); // disable Ctrl-Q quit shortcut [LINUX] [MAC] [FF87+]
 // user_pref("browser.tabs.closeWindowWithLastTab", false); -> prefs.js
 user_pref("browser.tabs.loadBookmarksInTabs", true); // open bookmarks in a new tab [FF57+]
 user_pref("browser.tabs.loadBookmarksInBackground", true);
@@ -58,6 +58,7 @@ user_pref("layout.word_select.eat_space_to_next_word", false); // select word wi
 user_pref("browser.toolbars.bookmarks.visibility", "always"); // see bugzilla 1320061 [FF53+]
 user_pref("browser.urlbar.groupLabels.enabled", false);
 user_pref("browser.urlbar.quicksuggest.scenario", "history");
+user_pref("browser.urlbar.maxRichResults", 24);
 // user_pref("browser.uiCustomization.state", "{"placements":{"widget-overflow-fixed-list":[],"nav-bar":["back-button","forward-button","stop-reload-button","home-button","urlbar-container","save-to-pocket-button","downloads-button","private-relay_firefox_com-browser-action","notes_mozilla_com-browser-action","_testpilot-containers-browser-action","developer-button","preferences-button","fxa-toolbar-menu-button"],"TabsToolbar":["tabbrowser-tabs","new-tab-button","alltabs-button"],"PersonalToolbar":["personal-bookmarks"]},"seen":["developer-button","private-relay_firefox_com-browser-action","notes_mozilla_com-browser-action","_testpilot-containers-browser-action"],"dirtyAreaCache":["nav-bar","PersonalToolbar","TabsToolbar"],"currentVersion":17,"newElementCount":5}");
 
 
