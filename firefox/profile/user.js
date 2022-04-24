@@ -63,3 +63,19 @@ user_pref("browser.urlbar.maxRichResults", 24);
 
 
 user_pref("browser.search.region", "AT"); // see bugzilla 1320061 [FF53+]
+
+
+// Disable telemetry
+user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+user_pref("browser.ping-centre.telemetry", false);
+
+// Disable pocket
+user_pref("browser.newtabpage.activity-stream.feeds.discoverystreamfeed", false);
+user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
+user_pref("browser.newtabpage.activity-stream.showSponsored", false);
+
+// Disable js in pdf
+user_pref("pdfjs.enableScripting", false);
+
+// Disable geo
+user_pref("geo.enabled", false);
