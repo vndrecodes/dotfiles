@@ -68,7 +68,7 @@ user_pref("network.captive-portal-service.enabled", false);
 user_pref("network.cookie.cookieBehavior", 1);
 user_pref("network.dns.disablePrefetch", true);
 user_pref("network.dns.disablePrefetchFromHTTPS", true);
-user_pref("network.http.referer.spoofSource", true);
+user_pref("network.http.referer.spoofSource", true); // with true icloud not working
 user_pref("network.http.speculative-parallel-limit", 0);
 user_pref("network.predictor.enable-prefetch", false);
 user_pref("network.predictor.enabled", false);
@@ -99,6 +99,6 @@ user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
 user_pref("toolkit.telemetry.unified", false);
 user_pref("toolkit.telemetry.unifiedIsOptIn", false);
 user_pref("toolkit.telemetry.updatePing.enabled", false);
-user_pref("webgl.disabled", true);
+user_pref("webgl.disabled", false);
 user_pref("webgl.renderer-string-override", " ");
 user_pref("webgl.vendor-string-override", " ");
