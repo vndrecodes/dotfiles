@@ -79,3 +79,5 @@ user_pref("pdfjs.enableScripting", false);
 
 // Disable geo
 user_pref("geo.enabled", false);
+
+user_pref("browser.fullscreen.autohide", true);
