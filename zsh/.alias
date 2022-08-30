@@ -7,6 +7,7 @@ alias cdh='cd ~'
 alias cdi="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias cdn='cd ~/nextcloud/'
 alias cdp='cd ~/nextcloud/projects'
+alias cdc='cd ~/container/'
 
 alias mvi='mv -i'
 alias cpi='cp -i'
@@ -33,3 +34,4 @@ alias sshut='shutdown -h now'
 alias slock='open -a ScreenSaverEngine.app'
 alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 alias hold='defaults write -g ApplePressAndHoldEnabled -bool true'
+alias ss='open -a /System/Library/CoreServices/ScreenSaverEngine.app'
