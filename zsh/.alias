@@ -8,6 +8,7 @@ alias cdi="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias cdn='cd ~/nextcloud/'
 alias cdp='cd ~/nextcloud/projects'
 alias cdc='cd ~/container/'
+alias cddo='cd ~/Downloads'
 
 alias mvi='mv -i'
 alias cpi='cp -i'
