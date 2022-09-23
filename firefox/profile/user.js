@@ -43,7 +43,7 @@ user_pref("privacy.clearOnShutdown.cookies", false);
 user_pref("privacy.clearOnShutdown.siteSettings", true); // [DEFAULT: false]
 
 user_pref("browser.download.autohideButton", true);
-user_pref("accessibility.typeaheadfind", true); // enable "Find As You Type"
+user_pref("accessibility.typeaheadfind", false); // enable "Find As You Type"
 user_pref("browser.backspace_action", 0); // 0=previous page, 1=scroll up, 2=do nothing
 user_pref("browser.quitShortcut.disabled", false); // disable Ctrl-Q quit shortcut [LINUX] [MAC] [FF87+]
 // user_pref("browser.tabs.closeWindowWithLastTab", false); -> prefs.js
