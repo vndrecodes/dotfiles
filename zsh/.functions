@@ -15,7 +15,7 @@ fnmov() {
 
 # make and change directory
 mkcd() {
-  mkdir -p "$@" && cd "$_";
+  mkdir -pv "$@" && cd "$_";
 }
 
 # change directory to the location in finder window
@@ -64,16 +64,15 @@ wholan() {
 
 fwhatis() {
   cat << EOF
-revdns    - Reverse dns lookup
 fn        - Lowercase file and remove spaces
 fnmov     - Lowercase file, remove spaces and rename file
-mkcd      - Make and change directory
+mkcd      - Make and change directory (Includes -p option which creates intermediate directories as required)
 cdfi      - Change working directory to the location in the finder window
 ffind     - Case-insensitive find and surpress errors
 fffind    - Fuzzy find
 rl        - Readlink
 rlp       - Readlink and copy path to clipboard
 wholan    - List hosts in lan
-
+revdns    - Reverse dns lookup
 EOF
 }
