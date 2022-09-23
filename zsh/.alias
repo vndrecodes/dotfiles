@@ -32,7 +32,6 @@ alias oppo='lsof -i -P'
 alias compgen='bash -c "compgen -c"'
 
 alias sshut='shutdown -h now'
-alias slock='open -a ScreenSaverEngine.app'
+alias ss='open -a ScreenSaverEngine.app'
 alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 alias hold='defaults write -g ApplePressAndHoldEnabled -bool true'
-alias ss='open -a /System/Library/CoreServices/ScreenSaverEngine.app'
