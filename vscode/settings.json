@@ -1,0 +1,22 @@
+{
+    "workbench.colorTheme": "Moonlight",
+    "editor.renderWhitespace": "boundary",
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingQuotes": "always",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.mouseWheelZoom": true,
+    "editor.parameterHints.cycle": true,
+    "editor.tabCompletion": "on",
+    "editor.minimap.enabled": false,
+    "search.showLineNumbers": true,
+    "scm.alwaysShowRepositories": true,
+    "scm.alwaysShowActions": true,
+    "telemetry.telemetryLevel": "off",
+    "editor.tabSize": 2,
+    "git.confirmSync": false,
+    "editor.guides.bracketPairs": "active",
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "javascript.suggest.completeFunctionCalls": true,
+    "window.zoomLevel": 0
+}
