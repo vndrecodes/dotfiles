@@ -62,6 +62,11 @@ wholan() {
   done <<< "$MACS"
 }
 
+cheat() {
+  cmd=$1
+  curl "cheat.sh/${cmd}"
+}
+
 fwhatis() {
   cat << EOF
 fn        - Lowercase file and remove spaces
@@ -74,5 +79,6 @@ rl        - Readlink
 rlp       - Readlink and copy path to clipboard
 wholan    - List hosts in lan
 revdns    - Reverse dns lookup
+cheat     - TLDR
 EOF
 }
