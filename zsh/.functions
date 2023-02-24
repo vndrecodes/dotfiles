@@ -67,6 +67,22 @@ cheat() {
   curl "cheat.sh/${cmd}"
 }
 
+heic2jpg() {
+  for i in *.heic(:r) ; sips -s format jpeg "$i.heic" --out "$i.jpg"
+  for i in *.HEIC(:r) ; sips -s format jpeg "$i.heic" --out "$i.jpg"
+}
+
+tolower() {
+  echo "Pass string: "
+  read input_string
+
+  modified_string=$(echo "$input_string" | tr '[:upper:]' '[:lower:]' | tr ' ' '_')
+
+  echo -n "$modified_string" | `pbcopy`
+  echo "Copied to clipboard:"
+  echo "$modified_string"
+}
+
 fwhatis() {
   cat << EOF
 fn        - Lowercase file and remove spaces
@@ -80,5 +96,7 @@ rlp       - Readlink and copy path to clipboard
 wholan    - List hosts in lan
 revdns    - Reverse dns lookup
 cheat     - TLDR
+heic2jpg  - Convert all .heic files to jpg files in current directory
+tolower   - Convert given string to lowercase and replace spaces with underlines
 EOF
 }
