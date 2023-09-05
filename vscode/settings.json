@@ -13,6 +13,7 @@
     "scm.alwaysShowActions": true,
     "telemetry.telemetryLevel": "off",
     "editor.tabSize": 2,
+    "editor.snippetSuggestions": "top",
     "git.confirmSync": false,
     "editor.guides.bracketPairs": "active",
     "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
