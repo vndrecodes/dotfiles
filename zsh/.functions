@@ -98,5 +98,19 @@ revdns    - Reverse dns lookup
 cheat     - TLDR
 heic2jpg  - Convert all .heic files to jpg files in current directory
 tolower   - Convert given string to lowercase and replace spaces with underlines
+
+sips         - scriptable image processing system
+cwebp        - encoding tool
+dwebp        - decoding tool
+gif2webp     - gif conversion tool
+img2webp     - animation creation tool
+vwebp        - webp visualization tool
+webpinfo     - webp analysis tool
+webpmux      - webp muxing tool
+anim_diff    - webp file comparison tool
+anim_dump    - tool for dumping animation frames
+get_disto    - tool for calculating file distortion
+webp_quality - webp quality estimation tool
+
 EOF
 }
