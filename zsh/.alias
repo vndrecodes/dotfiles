@@ -12,6 +12,7 @@ alias cddo='cd ~/Downloads'
 
 alias mvi='mv -i'
 alias cpi='cp -i'
+alias l='ls -1'
 
 alias dirs='dirs -v'
 alias grep='grep --color'
@@ -35,3 +36,4 @@ alias sshut='shutdown -h now'
 alias ss='open -a ScreenSaverEngine.app'
 alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 alias hold='defaults write -g ApplePressAndHoldEnabled -bool true'
+alias nano=/usr/local/bin/nano
