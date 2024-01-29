@@ -2,6 +2,12 @@
 
 set -e
 
+create_dirs_cache() {
+  cd ~
+  mkdir -p /Users/andre/.cache/zsh/
+  touch /Users/andre/.cache/zsh/dirs
+}
+
 depends_on() {
   $1 -v > /dev/null
   if [ $? -ne 0 ]; then
@@ -10,7 +16,6 @@ depends_on() {
     exit 1
   fi
 }
-
 
 confirm() {
   msg=$1
@@ -22,7 +27,6 @@ confirm() {
   fi
 }
 
-
 check_essential_dirs() {
   cd ~
   if [[ ! -d github || ! -d nextcloud ]]; then
@@ -30,7 +34,6 @@ check_essential_dirs() {
      exit 1
   fi
 }
-
 
 create_symlinks() {
   cd ~
@@ -42,7 +45,6 @@ create_symlinks() {
   ln -s github/dotfiles/zsh/.zshrc .zshrc
 }
 
-
 # install c-compiler & git
 install_xcode() {
   xcode-select -v > /dev/null 2>&1
@@ -50,13 +52,11 @@ install_xcode() {
   if [ $? -ne 0 ]; then xcode-select --install; fi
 }
 
-
 copy_ssh_keys() {
   if [ ! -d ~/.ssh ]; then
     echo "TODO copy, copy, copy..."
   fi
 }
-
 
 clone_dotfiles() {
   cd ~/github && [ -d ./dotfiles ] || git clone git@github.com:vndrecodes/dotfiles.git
@@ -80,52 +80,18 @@ install_node() {
   # creates /usr/local/bin
 }
 
-
-link_configs() {
-  cd ~
-  ln -s github/dotfiles/zsh/.functions .functions
-  ln -s github/dotfiles/nano/.nanorc .nanorc
-  ln -s github/dotfiles/zsh/.alias .zshenv
-  ln -s github/dotfiles/zsh/.zshrc .zshrc
-}
-
-
 add_bash_completions() {
   echo "fix .zsh/completion"
   # ~.zsh/completion
 }
 
-
-config_atom() {
-  # using rsync for moving stuff to get a little bit feedback
-  atom -v >/dev/null
-  if [ $? -ne 0 ]; then
-    cd ~/Downloads
-    mkdir atom && cd ~/atom
-
-    curl --location --remote-name https://atom.io/download/mac
-    unzip atom-mac.zip
-    rsync -vru --progress ./Atom.app /Applications/.
-    open -a Atom
-    echo "Open Atom and run: Install Shell Commands"
-    confirm "Done? (y for yes, anything else for abort)"
-  fi
-
-  killall Atom
-  rsync -vr --progress ~/github/dotfiles/atom/config.cson ~/.atom/.
-  rsync -vr --progress ~/github/dotfiles/atom/keymap.cson ~/.atom/.
-
-  apm install --packages-file ~/github/dotfiles/atom/my-packages.txt
-}
-
-
 upgrade_nano() {
   # TODO syntax files
   cd ~/Downloads
   depends_on "xcode-select"
-  curl -O  https://www.nano-editor.org/dist/v6/nano-6.0.tar.gz
-  tar xvzf nano-6.0.tar.gz
-  cd nano-6.0
+  curl -O  https://www.nano-editor.org/dist/v7/nano-7.2.tar.gz
+  tar xvzf nano-7.2.tar.gz
+  cd nano-7.2
   ./configure
   make
   make install
@@ -159,13 +125,12 @@ htop_rc() {
 }
 
 main() {
+  # create_dirs_cache
   # check_essential_dirs
   # install_xcode
-  copy_ssh_keys
+  # copy_ssh_keys
   # clone_dotfiles
   # install_node
-  # link_configs
-  config_atom
   # upgrade_nano
   # install_brew
   # build_locatedb
