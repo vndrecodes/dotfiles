@@ -42,3 +42,6 @@ alias waketime='sysctl -a |grep waketime'
 alias nano=/usr/local/bin/nano
 
 alias xpgen='npx express-generator'
+
+# laravel
+alias par='php artisan'
