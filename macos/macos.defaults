@@ -1,0 +1,187 @@
+#!/bin/bash
+#20240919
+
+echo "Deprecated: change manually:"
+echo "Group windows by application:"
+echo "defaults write com.apple.dock \"expose-group-apps\" -bool \"true\" && killall Dock"
+
+## Global
+# Systemwide dark mode
+defaults write -g AppleInterfaceStyle Dark
+
+# Always show scrollbars
+defaults write -g AppleShowScrollBars -string "Always"
+
+# Disable automatic termination of inactive apps
+defaults write -g NSDisableAutomaticTermination -bool "true"
+
+# Disable auto-correct
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool "false"
+
+# Disable automatic capitalization
+defaults write -g NSAutomaticCapitalizationEnabled -bool "false"
+
+# Disable smart dashes
+defaults write -g NSAutomaticDashSubstitutionEnabled -bool "false"
+
+# Disable automatic period substitution
+defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool "false"
+
+# Disable smart quotes
+defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool "false"
+
+# Show language menu bar on boot screen
+sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
+
+
+## Dock
+# Dock position
+defaults write com.apple.dock "orientation" -string "left"
+
+# Icon size
+defaults write com.apple.dock "tilesize" -int "62"
+
+# Autohide
+defaults write com.apple.dock "autohide" -bool "true"
+
+# Disable recent files
+defaults write com.apple.dock "show-recents" -bool "false"
+
+# Minimize effect type
+defaults write com.apple.dock "mineffect" -string "scale"
+
+# Minimize to app icon instead to dock
+defaults write com.apple.dock minimize-to-application -bool "true"
+
+# Show indicator lights for open applications
+defaults write com.apple.dock show-process-indicators -bool "true"
+
+
+## Finder
+# Don't hide well known file extensions
+defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
+
+# Show hidden files per default
+defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
+
+# Show pathbar in window at the bottom
+defaults write com.apple.finder "ShowPathbar" -bool "true"
+
+# List style per default
+defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
+
+# Keep folders on top when sorting by name
+defaults write com.apple.finder "_FXSortFoldersFirst" -bool "true"
+
+# Search location current folder per default
+defaults write com.apple.finder "FXDefaultSearchScope" -string "SCcf"
+
+# Disable save to icloud Documents per default
+defaults write NSGlobalDomain "NSDocumentSaveNewDocumentsToCloud" -bool "false"
+
+# Sidebar icons small
+defaults write NSGlobalDomain "NSTableViewDefaultSizeMode" -int "1"
+
+# Expand save panel by default
+defaults write -g NSNavPanelExpandedStateForSaveMode -bool "true"
+defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool "true"
+
+# Expand print panel by default
+defaults write -g PMPrintingExpandedStateForPrint -bool "true"
+defaults write -g PMPrintingExpandedStateForPrint2 -bool "true"
+
+# Default location for new finder windows (Home)
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
+defaults write com.apple.finder NewWindowTargetPath -string "file:///Users/$USER/"
+
+# Show status bar in window at the bottom
+defaults write com.apple.finder ShowStatusBar -bool "true"
+
+# Show path bar
+defaults write com.apple.finder ShowPathbar -bool "true"
+
+# Show full path instead of basename
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool "true"
+
+# Avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool "true"
+
+# Enable airdrop over ETH
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool "true"
+
+# Info panes
+defaults write com.apple.finder FXInfoPanesExpanded -dict \
+  Comments -bool "true" \
+  General -bool "true" \
+  MetaData -bool "true" \
+  Name -bool "true" \
+  Preview -bool "true" \
+  Privileges -bool "true"
+
+
+## Mouse
+# Double-tap an item and drag it without lifting finger
+defaults write com.apple.AppleMultitouchTrackpad "DragLock" -bool "true"
+
+# Keep usual dragging behaviour
+defaults write com.apple.AppleMultitouchTrackpad "Dragging" -bool "true"
+
+# Disable three finger drag gesture
+defaults write com.apple.AppleMultitouchTrackpad "TrackpadThreeFingerDrag" -bool "false"
+
+# Enable tab to click
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool "true"
+
+#
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+## Keyboard
+# Show characters accent when key is held down
+defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "true"
+
+# Fn key behaviour (0->Nothing; 1->Change inpute src; 2->Emoji; 3->Dictation)
+defaults write com.apple.HIToolbox AppleFnUsageType -int "0"
+
+
+## DiskUtility
+# Show progress status of disk operation
+defaults write com.apple.DiskUtility "OperationProgress DetailsVisible" -bool "true";
+
+# Show all devices enable
+defaults write SidebarShowAllDevices -bool "true";
+
+# Show all devices in sidebar
+defaults write SidebarShowAllDevices -bool "true";
+
+
+## Menu Bar
+# Remove siri
+defaults write com.apple.Siri StatusMenuVisible -bool false
+
+
+## Spotlight
+defaults write com.apple.spotlight orderedItems -array \
+  '{"enabled" = 1;"name" = "MENU_OTHER";}' \
+  '{"enabled" = 1;"name" = "IMAGES";}' \
+  '{"enabled" = 1;"name" = "MENU_DEFINITION";}' \
+  '{"enabled" = 1;"name" = "DOCUMENTS";}' \
+  '{"enabled" = 1;"name" = "EVENT_TODO";}' \
+  '{"enabled" = 0;"name" = "MOVIES";}' \
+  '{"enabled" = 1;"name" = "CONTACT";}' \
+  '{"enabled" = 1;"name" = "MENU_CONVERSION";}' \
+  '{"enabled" = 1;"name" = "MESSAGES";}' \
+  '{"enabled" = 0;"name" = "MUSIC";}' \
+  '{"enabled" = 1;"name" = "DIRECTORIES";}' \
+  '{"enabled" = 1;"name" = "PDF";}' \
+  '{"enabled" = 0;"name" = "PRESENTATIONS";}' \
+  '{"enabled" = 1;"name" = "APPLICATIONS";}' \
+  '{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
+  '{"enabled" = 0;"name" = "FONTS";}' \
+  '{"enabled" = 1;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}' \
+  '{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
+  '{"enabled" = 0;"name" = "SPREADSHEETS";}' \
+  '{"enabled" = 1;"name" = "BOOKMARKS";}'
+
+killall Finder;
+killall Dock;
+killall SystemUIServer;
