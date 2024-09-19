@@ -44,6 +44,10 @@ brew leaves > "$BACKUP_DIR/software_lists/brew.list"
 echo ""
 brew ls --casks >> "$BACKUP_DIR/software_lists/brew.list"
 
+# Sync software lists w. dotfiles repo
+rsync -vru "$BACKUP_DIR/software_lists/applications.list" "$HOME/github/dotfiles/software_lists/"
+rsync -vru "$BACKUP_DIR/software_lists/vscode.list" "$HOME/github/dotfiles/vscode/extensions.list"
+rsync -vru "$BACKUP_DIR/software_lists/brew.list" "$HOME/github/dotfiles/software_lists/"
 
 # Firefox settings
 FF_SRC_DIR="/Users/andre/Library/Application Support/Firefox/Profiles"
