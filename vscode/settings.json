@@ -1,6 +1,5 @@
 {
-    "workbench.colorTheme": "Moonlight",
-    "editor.renderWhitespace": "boundary",
+    "editor.renderWhitespace": "all",
     "editor.autoClosingBrackets": "always",
     "editor.autoClosingQuotes": "always",
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
@@ -13,11 +12,103 @@
     "scm.alwaysShowActions": true,
     "telemetry.telemetryLevel": "off",
     "editor.tabSize": 2,
-    "editor.snippetSuggestions": "top",
     "git.confirmSync": false,
     "editor.guides.bracketPairs": "active",
     "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
     "terminal.integrated.enableMultiLinePasteWarning": false,
+    "eslint.alwaysShowStatus": true,
+    "emmet.triggerExpansionOnTab": true,
+    "todo-tree.general.showActivityBarBadge": true,
+    "todo-tree.general.statusBar": "tags",
+    "todo-tree.tree.showCountsInTree": true,
+    "liveServer.settings.CustomBrowser": "Firefox Developer Edition.app",
+    "liveServer.settings.ChromeDebuggingAttachment": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
     "javascript.suggest.completeFunctionCalls": true,
-    "window.zoomLevel": 0
+    "window.commandCenter": true,
+    "firefox.executable": "/Applications/Firefox Developer Edition.app/Contents/MacOS/firefox",
+    "workbench.editorAssociations": {
+        "*.db": "sqlite-viewer.option"
+    },
+    "editor.snippetSuggestions": "top",
+    "editor.linkedEditing": true,
+    "pgsql.connections": [
+        {
+            "host": "localhost",
+            "dbname": "",
+            "user": "postgres",
+            "password": "",
+            "emptyPasswordInput": true,
+            "port": "5432"
+        }
+    ],
+    "references.preferredLocation": "view",
+    "editor.stickyScroll.enabled": false,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "editor.copyWithSyntaxHighlighting": false,
+    "indentRainbow.includedLanguages": [],
+    "emmet.includeLanguages": {
+        "blade": "html"
+    },
+    "blade.format.enable": true,
+    "files.associations": {
+        "*.blade.php": "html",
+        "*.tpl": "html"
+    },
+    "frameIndentRainbow.colors": [
+
+        "hsla(312, 70%, 50%, 0.2)",
+        "hsla(250, 70%, 50%, 0.2)",
+        "hsla(191, 70%, 50%, 0.2)",
+        "hsla(20, 70%, 50%, 0.2)"
+    ],
+    "frameIndentRainbow.excludedLanguages": [
+        "css",
+        "plaintext"
+    ],
+    "explorer.fileNesting.patterns": {
+        "*.ts": "${capture}.js",
+        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+        "*.jsx": "${capture}.js",
+        "*.tsx": "${capture}.ts",
+        "tsconfig.json": "tsconfig.*.json",
+        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+        "*.sqlite": "${capture}.${extname}-*",
+        "*.db": "${capture}.${extname}-*",
+        "*.sqlite3": "${capture}.${extname}-*",
+        "*.db3": "${capture}.${extname}-*",
+        "*.sdb": "${capture}.${extname}-*",
+        "*.s3db": "${capture}.${extname}-*"
+    },
+    "debug.allowBreakpointsEverywhere": true,
+    "firefox.port": 9001,
+    "workbench.colorTheme": "Moonlight II Italic",
+    "diffEditor.ignoreTrimWhitespace": true,
+    "scm.experimental.showHistoryGraph": true,
+    "workbench.experimental.enableNewProfilesUI": true,
+    "diffEditor.renderSideBySide": false,
+    "window.openFilesInNewWindow": "on",
+    "security.promptForLocalFileProtocolHandling": false,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "githubIssues.queries": [
+        {
+            "label": "My Issues",
+            "query": "is:open assignee:${user} repo:${owner}/${repository}",
+            "groupBy": [
+                "milestone"
+            ]
+        },
+        {
+            "label": "Created Issues",
+            "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+        },
+        {
+            "label": "Recent Issues",
+            "query": "state:open repo:${owner}/${repository} sort:updated-desc"
+        }
+    ],
+    "htmlentityreplacer.overrides": {},
+    "intelephense.telemetry.enabled": false
 }
