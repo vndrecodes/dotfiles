@@ -18,6 +18,7 @@ mkdir -p "$BACKUP_DIR/.config"
 mkdir -p "$BACKUP_DIR/php"
 mkdir -p "$BACKUP_DIR/software_lists"
 mkdir -p "$BACKUP_DIR/firefox"
+mkdir -p "$BACKUP_DIR/.zsh"
 
 # rclone config
 rsync -vr "$LOCAL_HOME/.config/rclone" "$BACKUP_DIR/.config"
@@ -32,6 +33,9 @@ rsync -vru "$LOCAL_HOME/.ssh" "$BACKUP_DIR"
 php --ini > "$BACKUP_DIR/php/README.md"
 rsync -vr "/usr/local/etc/php/8.3/php.ini" "$BACKUP_DIR/php/"
 rsync -vr "/usr/local/etc/php/8.3/conf.d/ext-opcache.ini" "$BACKUP_DIR/php/"
+
+# Docker commandline completion
+rsync -vr "/Users/andre/.zsh/completion" "$BACKUP_DIR/.zsh/"
 
 # Save lists of currently installed software
 ls -1 /Applications > "$BACKUP_DIR/software_lists/applications.list"
