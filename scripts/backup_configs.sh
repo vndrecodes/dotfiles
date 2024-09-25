@@ -45,7 +45,7 @@ ls -1 ~/Applications >> "$BACKUP_DIR/software_lists/applications.list"
 code --list-extensions > "$BACKUP_DIR/software_lists/vscode.list"
 
 brew leaves > "$BACKUP_DIR/software_lists/brew.list"
-echo ""
+echo "" >> "$BACKUP_DIR/software_lists/brew.list"
 brew ls --casks >> "$BACKUP_DIR/software_lists/brew.list"
 
 # Sync software lists w. dotfiles repo
