@@ -37,5 +37,15 @@
   {
     "key": "ctrl+shift+a",
     "command": "editor.emmet.action.balanceOut"
+  },
+  {
+    "key": "ctrl+shift+a",
+    "when": "editorLangId == css",
+    "command": "editor.action.selectToBracket"
+  },
+  {
+    "key": "ctrl+shift+a",
+    "when": "editorLangId == html",
+    "command": "editor.emmet.action.balanceOut"
   }
 ]
