@@ -86,24 +86,8 @@ add_bash_completions() {
 }
 
 upgrade_nano() {
-  # TODO syntax files
-  cd ~/Downloads
-  depends_on "xcode-select"
-  curl -O  https://www.nano-editor.org/dist/v7/nano-7.2.tar.gz
-  tar xvzf nano-7.2.tar.gz
-  cd nano-7.2
-  ./configure
-  make
-  make install
-
-  cd ~
-  ALIAS_NANO="alias nano=/usr/local/bin/nano"
-  if [ -f ".zshenv" ]; then
-    echo "$ALIAS_NANO" >> .zshenv
-  else
-    echo ".zshenv not found!"
-    echo "Add: $ALIAS_NANO manually."
-  fi
+# brew install nano
+# find nanorc syntax files (eg. /opt/homebrew/Cellar/nano/8.2/share/nano) and update paths in .nanorc
 }
 
 install_brew() {

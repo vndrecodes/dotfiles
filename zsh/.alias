@@ -25,7 +25,6 @@ alias df='df -H'
 
 alias firefox='/Applications/Firefox.app/Contents/MacOS/firefox-bin'
 alias ffdevdebug='/Applications/Firefox\ Developer\ Edition.app/Contents/MacOS/firefox -start-debugger-server'
-alias nano='/usr/local/bin/nano'
 
 alias myip='curl --location https://checkip.amazonaws.com'
 alias oppo='lsof -i -P'
@@ -39,7 +38,6 @@ alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 alias hold='defaults write -g ApplePressAndHoldEnabled -bool true'
 
 alias waketime='sysctl -a |grep waketime'
-alias nano=/usr/local/bin/nano
 
 alias xpgen='npx express-generator'
 
