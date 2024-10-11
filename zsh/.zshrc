@@ -1,5 +1,5 @@
 # Prompt
-PROMPT='%F{132}%n%f %F{30}at%f %F{53}%m%f %F{30}in%f %F{179}%~%f %# '
+PROMPT='%F{197}%n%f %F{132}at%f %F{97}%m%f %F{132}in%f %F{215}%~%f %# '
 export PATH=~/bin:$PATH
 export EDITOR=nano
 export VISUAL="$EDITOR"
