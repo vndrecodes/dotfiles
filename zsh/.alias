@@ -27,6 +27,7 @@ alias firefox='/Applications/Firefox.app/Contents/MacOS/firefox-bin'
 alias ffdevdebug='/Applications/Firefox\ Developer\ Edition.app/Contents/MacOS/firefox -start-debugger-server'
 
 alias myip='curl --location https://checkip.amazonaws.com'
+alias localip="ifconfig en0 inet | grep -oE '\binet[[:space:]]+((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b'"
 alias oppo='lsof -i -P'
 
 # similar to "apropos *"
