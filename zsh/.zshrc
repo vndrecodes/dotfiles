@@ -63,3 +63,6 @@ setopt PUSHD_IGNORE_DUPS
 
 ## This reverts the +/- operators.
 setopt PUSHD_MINUS
+
+## Enable docker cli completion
+source <(docker completion zsh)
